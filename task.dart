@@ -51,21 +51,26 @@ class Person {
 
 void main(){
   var a = Person("Ash","Learner","Web");
-  print("${a.name}");
-  print("${a.role}");
-  print("${a.stack}");
-  print("---------\n");
+  var f = Person("Gary","Learner","Flutter");
+
   var b = Person("Red","Mentor","Web");
   b.setAvailableTime(50);
+  
   var c = Person("Blue","Mentor","Web");
   c.setAvailableTime(60);
-  var d = Person("Green","Mentor","Futter");
+  
+  var d = Person("Green","Mentor","Flutter");
   d.setAvailableTime(100);
+  
   var e = Person("Yellow","Mentor","Web");
   e.setAvailableTime(50);
-  List <Person> list = [b,c,d,e];
+  
+  List <Person> list = [a,b,c,d,e,f];
 
+  print("${a.name}'s available mentors\n");
   a.getMentors(list, "Web", 50);
-
+  print("---------\n");
+  print("\n${f.name}'s available mentors\n");
+  f.getMentors(list,"Flutter",100);
 
 }
